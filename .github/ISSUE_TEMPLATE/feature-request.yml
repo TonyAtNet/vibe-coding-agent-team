@@ -1,0 +1,69 @@
+name: Feature Request
+description: 建议新角色、新功能或改进现有角色
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的建议！请详细描述你的想法，让我们一起让这套智能体团队更好。
+
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: 建议类型
+      description: 这是哪种类型的建议？
+      options:
+        - 新增角色
+        - 改进现有角色
+        - 新增功能/工具链
+        - 文档/站点改进
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 功能描述
+      description: 清楚描述你的建议。如果是新角色，请说明它在 Vibe Coding 链路中的位置和必要性。
+      placeholder: |
+        例如：建议新增 vibe-ux-researcher 角色，负责在原型验证前
+        进行用户研究和需求洞察。目前在 Vibe Coding 链路中，
+        从趋势研究到原型设计之间缺少用户研究环节...
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: 为什么需要这个功能？
+      description: 解释这个建议解决了什么问题，或带来了什么价值。
+      placeholder: |
+        例如：当前链路中，vibe-prototyper 直接从需求生成原型，
+        但缺少对用户痛点的深度理解。增加用户研究角色可以让
+        原型验证的成功率从 60% 提升到 80%...
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 具体建议
+      description: 如果你有具体的设计方案、角色大纲或实现思路，请写出来。
+      placeholder: |
+        例如：vibe-ux-researcher 的核心使命：
+        - 用 AI 工具进行用户访谈和问卷分析
+        - 输出用户画像和痛点地图
+        - 工具链：Dovetail, Maze, Notion AI...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 自检清单
+      description: 提交前请确认以下事项
+      options:
+        - label: 我已搜索过现有 Issues，没有重复建议
+          required: true
+        - label: 这个建议与 Vibe Coding 理念一致
+          required: true
+        - label: 如果是新角色，我已经阅读过 CONTRIBUTING.md 中的设计规范
+          required: false
