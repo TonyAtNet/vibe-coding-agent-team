@@ -3,241 +3,261 @@
 <div align="center">
 
 <p align="center">
-  <strong>面向 AI IDE 的 21 个 Vibe Coding 角色配置库</strong><br>
-  直接导入 Cursor / Claude Code / Kimi Code / Trae 即可使用
+  <strong>21 AI-Native Role Configurations for AI IDEs</strong><br>
+  Directly import into Cursor / Claude Code / Kimi Code / Trae and use immediately
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/Agents-21-blue.svg" alt="Agents: 21">
   <img src="https://img.shields.io/badge/Vibe%20Coding-AI%20Native-green.svg" alt="Vibe Coding: AI Native">
-  <a href="en/README.md"><img src="https://img.shields.io/badge/English-README-blue.svg" alt="English"></a>
+  <a href="zh-CN/README.md"><img src="https://img.shields.io/badge/中文文档-README-red.svg" alt="中文文档"></a>
 </p>
 
 <p align="center">
-  <a href="#快速开始">快速开始</a> ·
-  <a href="#项目结构">项目结构</a> ·
-  <a href="#使用示例">使用示例</a> ·
-  <a href="#贡献指南">贡献指南</a> ·
-  <a href="#许可证">许可证</a>
+  <a href="#quick-start">Quick Start</a> ·
+  <a href="#project-structure">Project Structure</a> ·
+  <a href="#usage-example">Usage Example</a> ·
+  <a href="#contribution-guide">Contribution Guide</a> ·
+  <a href="zh-CN/README.md">中文文档</a> ·
+  <a href="#license">License</a>
 </p>
 
 </div>
 
 ---
 
-## 项目简介
+## Project Introduction
 
-Vibe Coding Agent Team 是一套面向 **Vibe Coding 时代** 的 AI-Native 智能体角色配置库，共包含 **21 个专业角色**，覆盖从趋势研究、产品定义、原型验证到开发、测试、部署运维的完整链路。
+Vibe Coding Agent Team is a set of **AI-Native agent role configurations** for the **Vibe Coding era**, containing **21 professional roles** covering the complete chain from trend research, product definition, prototype validation to development, testing, deployment, and operations.
 
-每个角色文件均包含：
-- 完整的 System Prompt 配置（可直接导入 AI IDE）
-- 可执行的 Spec 模板（非静态文档，可被 AI 直接消费）
-- 标准化工作流程（Step-by-Step 操作指南）
-- 成功指标与 AI 可观测性指标
-- 现代工具链声明（Cursor, v0, Lovable, MCP, LangChain 等）
+Each role file contains:
+- Complete System Prompt configuration (directly importable into AI IDEs)
+- Executable spec templates (not static documents, directly consumable by AI)
+- Standardized workflows (step-by-step operation guides)
+- Success metrics and AI observability metrics
+- Modern toolchain declarations (Cursor, v0, Lovable, MCP, LangChain, etc.)
 
-### 核心设计原则
+### Core Design Principles
 
-| 原则 | 说明 |
-|------|------|
-| **零 Emoji** | 所有文件不含 emoji，保持专业 |
-| **零角色扮演** | 去除 "你是 Alex"、"10 年经验" 等虚假人格，以能力定义身份 |
-| **可执行 Spec** | 交付物是可被 AI IDE 直接执行的 Prompt 模板和代码配置，而非静态文档 |
-| **RICE-V 评分** | 引入 Vibe Speed 和 Model Risk 评估，数据驱动优先级决策 |
-| **AI 可观测性** | 每个角色包含幻觉率、TTFT、Token 成本、人工接管率等指标 |
-
----
-
-## 快速开始
-
-### 1. 选择角色
-
-根据你当前的项目阶段，选择对应的角色文件：
-
-```
-项目启动阶段    →  vibe-trend-researcher + vibe-prototyper
-产品定义阶段    →  product-manager + vibe-behavioral-designer
-技术架构阶段    →  vibe-architect + vibe-priority-orchestrator
-开发阶段        →  vibe-frontend-engineer / vibe-backend-engineer / vibe-mobile-engineer + vibe-ai-llm-engineer
-质量保证阶段    →  vibe-qa-automation-engineer + vibe-code-reviewer + vibe-security-engineer
-部署运维阶段    →  vibe-devops-engineer + vibe-database-engineer + vibe-data-engineer
-文档交付阶段    →  vibe-tech-writer
-团队扩展阶段    →  vibe-onboarding-engineer
-反馈迭代阶段    →  vibe-feedback-analyst
-```
-
-### 2. 导入 AI IDE
-
-**Cursor**：
-1. 打开 Cursor Settings → Rules
-2. 创建新 Rule，将 `.md` 文件内容粘贴到 System Prompt 中
-3. 保存后，在对话中 @ 该角色即可调用
-
-**Claude Code**：
-1. 在项目根目录创建 `CLAUDE.md`
-2. 将角色文件内容追加到 `CLAUDE.md` 中
-3. 运行 `claude` 时自动加载角色配置
-
-**Kimi Code / Trae / Roo Code**：
-将 `.md` 文件内容作为 System Prompt 或角色配置导入即可。
-
-### 3. 开始协作
-
-每个角色文件包含完整的工作流程。例如，调用 `vibe-prototyper`：
-
-> "请按照你的工作流程，帮我把这个需求转化为可交互原型。需求是：一个 AI 驱动的待办应用，用户可以用自然语言添加任务。"
-
-角色会自动执行：需求理解 → AI 生成原型 → 用户测试设计 → 洞察分析 → 原型到代码迁移。
+| Principle | Description |
+|-----------|-------------|
+| **Zero Emoji** | All files contain no emoji, maintaining professionalism |
+| **Zero Role-Playing** | Remove "You are Alex", "10 years experience" and other false personas; define identity by capability |
+| **Executable Specs** | Deliverables are prompt templates and code configurations that AI IDEs can directly execute, not static documents |
+| **RICE-V Scoring** | Introduce Vibe Speed and Model Risk assessment for data-driven priority decisions |
+| **AI Observability** | Every role includes hallucination rate, TTFT, token cost, human-in-the-loop rate |
 
 ---
 
-## 项目结构
+## Quick Start
+
+### 1. Select a Role
+
+Choose the corresponding role file based on your current project stage:
+
+```
+Project Initiation    →  vibe-trend-researcher + vibe-prototyper
+Product Definition    →  product-manager + vibe-behavioral-designer
+Technical Architecture →  vibe-architect + vibe-priority-orchestrator
+Development Phase     →  vibe-frontend-engineer / vibe-backend-engineer / vibe-mobile-engineer + vibe-ai-llm-engineer
+Quality Assurance     →  vibe-qa-automation-engineer + vibe-code-reviewer + vibe-security-engineer
+Deployment & Ops      →  vibe-devops-engineer + vibe-database-engineer + vibe-data-engineer
+Documentation         →  vibe-tech-writer
+Team Expansion      →  vibe-onboarding-engineer
+Feedback Iteration    →  vibe-feedback-analyst
+```
+
+### 2. Import into AI IDE
+
+**Cursor**:
+1. Open Cursor Settings → Rules
+2. Create a new Rule, paste the `.md` file content into the System Prompt
+3. Save and @mention the role in conversations to invoke it
+
+**Claude Code**:
+1. Create `CLAUDE.md` in the project root
+2. Append the role file content to `CLAUDE.md`
+3. Automatically loads when running `claude`
+
+**Kimi Code / Trae / Roo Code**:
+Import the `.md` file content as System Prompt or role configuration.
+
+### 3. Start Collaboration
+
+Each role file contains a complete workflow. For example, invoking `vibe-prototyper`:
+
+> "Please follow your workflow and help me turn this requirement into an interactive prototype. The requirement is: an AI-driven todo app where users can add tasks using natural language."
+
+The role will automatically execute: requirement understanding → AI prototype generation → user testing design → insight analysis → prototype-to-code migration.
+
+---
+
+## Project Structure
 
 ```
 vibe-coding-agent-team/
-├── LICENSE                              # MIT 许可证
-├── README.md                            # 本文件
-├── plan.md                              # 改造计划蓝图（参考）
-├── vibe-coding-team-redesign-report.md  # 改造总结报告（参考）
+├── LICENSE                              # MIT License
+├── README.md                            # English (this file)
+├── zh-CN/README.md                      # Chinese version
 │
-├── product/                             # 产品侧角色（5个）
-│   ├── product-manager.md               # 产品管理（改造范例）
-│   ├── vibe-behavioral-designer.md      # AI-Native 产品体验设计师
-│   ├── vibe-feedback-analyst.md         # AI-Native 反馈分析师
-│   ├── vibe-priority-orchestrator.md    # AI-Native 优先级调度器
-│   └── vibe-trend-researcher.md         # AI-Native 趋势研究员
+├── product/                             # Product-side roles (5) — Chinese
+│   ├── product-manager.md
+│   ├── vibe-behavioral-designer.md
+│   ├── vibe-feedback-analyst.md
+│   ├── vibe-priority-orchestrator.md
+│   └── vibe-trend-researcher.md
 │
-└── engineering/                         # 工程侧角色（16个）
-    ├── vibe-ai-llm-engineer.md          # AI/LLM 工程师
-    ├── vibe-architect.md                # 系统架构师（前后端合并）
-    ├── vibe-backend-engineer.md         # 后端工程师
-    ├── vibe-code-reviewer.md            # 代码审查员
-    ├── vibe-database-engineer.md        # 数据库工程师
-    ├── vibe-data-engineer.md            # 数据工程师
-    ├── vibe-devops-engineer.md          # DevOps + SRE + 事件响应
-    ├── vibe-frontend-engineer.md        # 前端工程师
-    ├── vibe-git-master.md               # Git 版本控制大师
-    ├── vibe-minimal-change-engineer.md  # 精细化改动工程师
-    ├── vibe-mobile-engineer.md          # 移动端工程师
-    ├── vibe-onboarding-engineer.md      # 新人入职工程师
-    ├── vibe-prototyper.md               # 原型工程师
-    ├── vibe-qa-automation-engineer.md   # 质量保障自动化工程师
-    ├── vibe-security-engineer.md         # 安全工程师
-    └── vibe-tech-writer.md              # 技术文档工程师
+├── engineering/                         # Engineering-side roles (16) — Chinese
+│   ├── vibe-ai-llm-engineer.md
+│   ├── vibe-architect.md
+│   ├── vibe-backend-engineer.md
+│   ├── vibe-code-reviewer.md
+│   ├── vibe-database-engineer.md
+│   ├── vibe-data-engineer.md
+│   ├── vibe-devops-engineer.md
+│   ├── vibe-frontend-engineer.md
+│   ├── vibe-git-master.md
+│   ├── vibe-minimal-change-engineer.md
+│   ├── vibe-mobile-engineer.md
+│   ├── vibe-onboarding-engineer.md
+│   ├── vibe-prototyper.md
+│   ├── vibe-qa-automation-engineer.md
+│   ├── vibe-security-engineer.md
+│   └── vibe-tech-writer.md
+│
+├── zh-CN/                               # Chinese versions
+│   ├── product/                           # Chinese product roles (5)
+│   └── engineering/                       # Chinese engineering roles (16)
+│
+├── en/                                  # English versions
+│   ├── product/                           # English product roles (5)
+│   └── engineering/                       # English engineering roles (16)
+│
+├── examples/                            # Example projects
+│   └── ai-note-assistant/                 # End-to-end example (8 stages)
+│
+├── scripts/                             # Build and validation scripts
+│   ├── validate.py
+│   └── build-site.py
+│
+└── docs/                                # GitHub Pages site
+    └── index.html
 ```
 
-**总计：21 个智能体文件**
+**Total: 21 agent roles (Chinese + English bilingual)**
 
 ---
 
-## 使用示例
+## Usage Example
 
-### 场景：快速验证一个产品假设
+### Scenario: Quickly Validate a Product Hypothesis
 
 ```
-Step 1: 调用 vibe-trend-researcher
-  "研究 2026 年 AI 待办应用的市场趋势，输出可执行趋势 Spec"
+Step 1: Invoke vibe-trend-researcher
+  "Research 2026 AI todo app market trends, output executable trend spec"
 
-Step 2: 调用 vibe-prototyper
-  "基于趋势 Spec，用 v0 生成可交互原型，目标：2 小时内完成"
+Step 2: Invoke vibe-prototyper
+  "Based on the trend spec, use v0 to generate an interactive prototype, target: complete within 2 hours"
 
-Step 3: 调用 vibe-priority-orchestrator
-  "对原型验证结果做 RICE-V 评分，决定是否进入开发"
+Step 3: Invoke vibe-priority-orchestrator
+  "RICE-V score the prototype validation results, decide whether to proceed to development"
 
-Step 4: 调用 product-manager + vibe-behavioral-designer
-  "输出可执行产品 Spec，包含设计 Token 和组件规范"
+Step 4: Invoke product-manager + vibe-behavioral-designer
+  "Output executable product spec, including design tokens and component specifications"
 
-Step 5: 调用 vibe-architect + vibe-frontend-engineer + vibe-backend-engineer
-  "按 Spec 进行开发，使用 Cursor 辅助编码"
+Step 5: Invoke vibe-architect + vibe-frontend-engineer + vibe-backend-engineer
+  "Develop according to spec, using Cursor for AI-assisted coding"
 
-Step 6: 调用 vibe-qa-automation-engineer + vibe-code-reviewer
-  "自动化测试 + 代码审查 + 安全扫描"
+Step 6: Invoke vibe-qa-automation-engineer + vibe-code-reviewer
+  "Automated testing + code review + security scanning"
 
-Step 7: 调用 vibe-devops-engineer
-  "部署到 Vercel，配置可观测性"
+Step 7: Invoke vibe-devops-engineer
+  "Deploy to Vercel, configure observability"
 
-Step 8: 调用 vibe-tech-writer
-  "同步更新文档，确保代码与文档一致"
+Step 8: Invoke vibe-tech-writer
+  "Synchronously update documentation, ensure code and docs are consistent"
 ```
 
 ---
 
-## 角色能力速查
+## Role Capability Quick Reference
 
-| 角色 | 核心能力 | 关键工具链 | Vibe Speed |
-|------|---------|-----------|------------|
-| vibe-trend-researcher | AI 驱动趋势研究 | Perplexity, Deep Research, Kimi Research | Days |
-| vibe-prototyper | Hours 级原型验证 | v0, Lovable, Bolt, Cursor | Hours |
-| vibe-priority-orchestrator | RICE-V 动态优先级 | PostHog, Amplitude, Langfuse | Days |
-| vibe-behavioral-designer | Agent 体验设计 | System Prompt 工程, MCP 工具设计 | Days |
-| vibe-feedback-analyst | LLM 语义反馈分析 | 向量数据库, RAG pipeline | Days |
-| vibe-architect | MCP 生态架构设计 | Terraform, Kubernetes, Vercel | Weeks |
-| vibe-ai-llm-engineer | LLM 应用开发 | LangChain, Vercel AI SDK, Langfuse | Days |
-| vibe-frontend-engineer | AI 辅助前端开发 | Cursor, v0 Dev Mode, Tailwind | Days |
-| vibe-backend-engineer | AI 辅助后端开发 | Cursor, Claude Code, Supabase | Days |
-| vibe-qa-automation-engineer | AI 驱动质量门禁 | 智能测试生成, 视觉回归, 安全扫描 | Days |
-| vibe-security-engineer | AI 安全审计 | 提示注入检测, 零信任架构 | Days |
-| vibe-devops-engineer | AI 部署与可观测性 | Terraform, Kubernetes, Helicone | Days |
-| vibe-database-engineer | 数据库设计与优化 | Supabase, Pinecone, Qdrant | Days |
-| vibe-data-engineer | 数据管道与 RAG | ETL, 向量数据库, 数据质量 | Weeks |
-| vibe-git-master | AI 时代 Git 工作流 | Conventional Commits, 自动化合并 | Hours |
-| vibe-onboarding-engineer | 新人 Day 1 上手 | Dev Container, AI 辅助导览 | Days |
-| vibe-tech-writer | 活文档与知识库 | 文档即代码, 示例可运行 | Days |
-| vibe-code-reviewer | AI 代码审查 | 代码质量, 安全漏洞, 性能 | Hours |
-| vibe-mobile-engineer | AI 移动开发 | Cursor, React Native, Flutter | Days |
-| vibe-minimal-change-engineer | 精细化改动 | 最小变更原则, 影响面评估 | Hours |
-| product-manager | 产品定义与决策 | RICE-V, 可执行 Spec | Days |
-
----
-
-## 贡献指南
-
-我们欢迎所有贡献！无论是：
-- 新增角色
-- 改进现有角色的 Prompt 或工作流程
-- 修正工具链或链接
-- 补充使用示例
-
-### 提交前检查清单
-
-- [ ] 文件使用 YAML Frontmatter，包含 `name`, `description`, `color` 字段
-- [ ] 文件内容不含 emoji
-- [ ] 不含虚假角色扮演（"你是 Alex"、"10 年经验" 等）
-- [ ] 包含核心使命、关键原则、技术交付物、工作流程、成功指标、沟通风格
-- [ ] 包含现代 AI 工具链声明
-- [ ] 包含 AI 可观测性指标（至少覆盖幻觉率、TTFT、Token 成本）
-
-### 提交方式
-
-1. Fork 本仓库
-2. 创建你的分支 (`git checkout -b feature/new-role`)
-3. 提交更改 (`git commit -am 'Add vibe-xxx role'`)
-4. 推送到分支 (`git push origin feature/new-role`)
-5. 创建 Pull Request
-
-详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+| Role | Core Capability | Key Toolchain | Vibe Speed |
+|------|--------------|-------------|------------|
+| vibe-trend-researcher | AI-driven trend research | Perplexity, Deep Research, Kimi Research | Days |
+| vibe-prototyper | Hours-level prototype validation | v0, Lovable, Bolt, Cursor | Hours |
+| vibe-priority-orchestrator | RICE-V dynamic priority | PostHog, Amplitude, Langfuse | Days |
+| vibe-behavioral-designer | Agent experience design | System Prompt engineering, MCP tool design | Days |
+| vibe-feedback-analyst | LLM semantic feedback analysis | Vector databases, RAG pipelines | Days |
+| vibe-architect | MCP ecosystem architecture | Terraform, Kubernetes, Vercel | Weeks |
+| vibe-ai-llm-engineer | LLM application development | LangChain, Vercel AI SDK, Langfuse | Days |
+| vibe-frontend-engineer | AI-assisted frontend development | Cursor, v0 Dev Mode, Tailwind | Days |
+| vibe-backend-engineer | AI-assisted backend development | Cursor, Claude Code, Supabase | Days |
+| vibe-qa-automation-engineer | AI-driven quality gates | Intelligent test generation, visual regression, security scanning | Days |
+| vibe-security-engineer | AI security audit | Prompt injection detection, zero-trust architecture | Days |
+| vibe-devops-engineer | AI deployment & observability | Terraform, Kubernetes, Helicone | Days |
+| vibe-database-engineer | Database design & optimization | Supabase, Pinecone, Qdrant | Days |
+| vibe-data-engineer | Data pipelines & RAG | ETL, vector databases, data quality | Weeks |
+| vibe-git-master | AI-era Git workflow | Conventional Commits, automated merging | Hours |
+| vibe-onboarding-engineer | New hire Day 1 onboarding | Dev Containers, AI-assisted onboarding | Days |
+| vibe-tech-writer | Living documentation & knowledge base | Docs-as-code, runnable examples | Days |
+| vibe-code-reviewer | AI code review | Code quality, security vulnerabilities, performance | Hours |
+| vibe-mobile-engineer | AI mobile development | Cursor, React Native, Flutter | Days |
+| vibe-minimal-change-engineer | Surgical changes | Minimal change principle, impact assessment | Hours |
+| product-manager | Product definition & decisions | RICE-V, executable specs | Days |
 
 ---
 
-## 许可证
+## Contribution Guide
 
-本项目采用 [MIT License](LICENSE) 开源。
+We welcome all contributions! Whether it is:
+- New roles
+- Improving existing role prompts or workflows
+- Correcting toolchains or links
+- Adding usage examples
+- Translations
 
-你可以自由使用、修改、分发，包括商业用途。只需保留原始版权声明即可。
+### Before Submitting Checklist
+
+- [ ] File uses YAML Frontmatter, containing `name`, `description`, `color` fields
+- [ ] File content contains no emoji
+- [ ] Contains no false role-playing ("You are Alex", "10 years experience", etc.)
+- [ ] Contains all required sections (core mission, key principles, technical deliverables, workflow, success metrics, communication style)
+- [ ] Contains modern AI toolchain declarations
+- [ ] Contains AI observability metrics (hallucination rate, TTFT, token cost)
+- [ ] Local validation passes: `python scripts/validate.py` with no errors
+
+### How to Submit
+
+1. Fork this repository
+2. Create your branch (`git checkout -b feature/new-role`)
+3. Submit changes (`git commit -am 'Add vibe-xxx role'`)
+4. Push to branch (`git push origin feature/new-role`)
+5. Create Pull Request
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ---
 
-## 致谢
+## License
 
-本项目的角色设计灵感来源于 Vibe Coding 生态的最新实践，包括 Cursor、v0、Lovable、Claude Code、Kimi Code 等 AI 工具的使用经验，以及 MCP 协议、RICE-V 评分框架等前沿方法论。
+This project is open-sourced under the [MIT License](LICENSE).
 
-特别感谢所有贡献者和使用者的反馈，让这套智能体团队持续进化。
+You are free to use, modify, and distribute, including for commercial purposes. Just retain the original copyright notice.
+
+---
+
+## Acknowledgments
+
+This project's role design is inspired by the latest practices in the Vibe Coding ecosystem, including usage experience with Cursor, v0, Lovable, Claude Code, Kimi Code, and other AI tools, as well as cutting-edge methodologies like the MCP protocol and RICE-V scoring framework.
+
+Special thanks to all contributors and users for their feedback, which allows this agent team to continuously evolve.
 
 ---
 
 <div align="center">
 
-**用 AI 团队，做 Vibe 产品。**
+**Build Vibe products with AI teams.**
 
 </div>
